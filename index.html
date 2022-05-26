@@ -319,9 +319,10 @@
                 style="margin-top: 0px; margin-bottom: 0px; text-align: left;">
                 <div class="dplugin-mobile dplugin-mobile-dinput dinput-vie dplugin-mobile-dinput-focusalert"
                   style="font-size: 19px; font-family: 微软雅黑; font-weight: bold; font-style: normal; color: rgb(96, 98, 102); text-decoration: none; text-align: left; line-height: 20px; letter-spacing: 0px;">
-                  <span class="plugin-data"
+                  <span id="info_show" class="plugin-data"
                     style="font-size: 19px; font-family: 微软雅黑; font-weight: bold; font-style: normal; color: rgb(96, 98, 102); text-decoration: none; text-align: left; line-height: 20px; letter-spacing: 0px;">雷镇宇，信息科学与工程学部，崂山东门（学生）出</span>
                 </div>
+                <input id="info_hide" type="text" style="font-size:19px; width:100%; display:none;" value="雷镇宇，信息科学与工程学部，崂山东门（学生）出">
               </div>
               <!---->
             </div>
@@ -521,6 +522,27 @@
     let mydate = new Date();
     document.getElementById('myDate').innerHTML = mydate.Format('yyyy-MM-dd hh:mm');
     console.log(mydate);
+
+    let info_show = document.getElementById('info_show');
+    let info_hide = document.getElementById('info_hide');
+    console.log(info_show)
+    info_show.onclick = function () {
+      if (info_hide.style.display == 'block') {
+        info_hide.style.display = 'none';
+        info_show.innerHTML = info_hide.value;
+      } else {
+        info_hide.style.display = 'block';
+      }
+    }
+
+    // info_hide.ondblclick = function () {
+
+    //   info_hide.style.display = 'none';
+    //   info_show.innerHTML = info_hide.value();
+    // }
+
+
+    
 
   </script>
 
